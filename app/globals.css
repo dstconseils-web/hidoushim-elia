@@ -1,0 +1,647 @@
+/* ═══════════════════════════════════════════════
+   Hidoushim d'Elia — Global Styles
+   Design: Warm parchment, editorial serif, quiet
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* Warm parchment palette */
+  --bg: #faf6f0;
+  --bg-card: #ffffff;
+  --bg-accent: #f3ece2;
+  --text: #2c2417;
+  --text-secondary: #6b5e4f;
+  --text-light: #9a8d7e;
+  --accent: #8b6914;
+  --accent-hover: #a67c1a;
+  --accent-light: #d4b566;
+  --border: #e6ddd0;
+  --border-light: #ede6db;
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+
+  /* Spacing */
+  --max-w: 720px;
+  --max-w-wide: 960px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navigation ───────────────────────────── */
+
+.site-nav {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  background: rgba(250, 246, 240, 0.92);
+}
+
+.nav-inner {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.nav-logo-hebrew {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.nav-logo-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ── Main ─────────────────────────────────── */
+
+.site-main {
+  flex: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  width: 100%;
+}
+
+/* ── Footer ───────────────────────────────── */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  background: var(--bg-accent);
+}
+
+/* ── Homepage ─────────────────────────────── */
+
+.hero {
+  text-align: center;
+  padding: 2rem 0 3rem;
+}
+
+.hero-hebrew {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.03em;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.hero-separator {
+  width: 60px;
+  height: 2px;
+  background: var(--accent-light);
+  margin: 0 auto 2.5rem;
+  border: none;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 105, 20, 0.25);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ── Section Titles ───────────────────────── */
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* ── Hidoush Cards ────────────────────────── */
+
+.hidoush-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hidoush-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1.3rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.hidoush-card:hover {
+  border-color: var(--accent-light);
+  box-shadow: 0 2px 12px rgba(139, 105, 20, 0.08);
+  transform: translateY(-1px);
+}
+
+.hidoush-card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.hidoush-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.hidoush-card-meta .parsha-tag {
+  background: var(--bg-accent);
+  color: var(--accent);
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.hidoush-card-excerpt {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* ── Parsha Page ──────────────────────────── */
+
+.sefer-group {
+  margin-bottom: 2rem;
+}
+
+.sefer-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.sefer-title-hebrew {
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.parsha-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.5rem;
+}
+
+.parsha-link {
+  display: block;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  background: var(--bg-card);
+}
+
+.parsha-link:hover {
+  border-color: var(--accent-light);
+  background: var(--bg-accent);
+  color: var(--accent);
+}
+
+.parsha-count {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+/* ── Titres List ──────────────────────────── */
+
+.sort-controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.sort-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sort-btn.active, .sort-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg-accent);
+}
+
+.titre-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border-light);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+
+.titre-item:hover {
+  background: var(--bg-accent);
+  margin: 0 -0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 4px;
+}
+
+.titre-item-left {
+  min-width: 0;
+}
+
+.titre-item-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.titre-item-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  font-size: 0.83rem;
+  color: var(--text-light);
+}
+
+/* ── Hidoush Detail ───────────────────────── */
+
+.hidoush-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.hidoush-detail-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.hidoush-detail-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.hidoush-detail-meta a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hidoush-detail-meta a:hover {
+  text-decoration: underline;
+}
+
+.hidoush-content {
+  line-height: 1.85;
+  font-size: 1.05rem;
+}
+
+.hidoush-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 2rem 0 0.75rem;
+}
+
+.hidoush-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.hidoush-content p {
+  margin-bottom: 1rem;
+}
+
+.hidoush-content strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hidoush-content ol,
+.hidoush-content ul {
+  margin: 0.75rem 0 1rem 1.5rem;
+}
+
+.hidoush-content li {
+  margin-bottom: 0.35rem;
+}
+
+.hidoush-content blockquote {
+  border-left: 3px solid var(--accent-light);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  background: var(--bg-accent);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.hidoush-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.hidoush-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.hidoush-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── À propos ─────────────────────────────── */
+
+.about-content {
+  line-height: 1.85;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+}
+
+.about-disclaimer {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-accent);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-light);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* ── Empty States ─────────────────────────── */
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ── Breadcrumb ───────────────────────────── */
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+
+.breadcrumb span {
+  margin: 0 0.4rem;
+}
+
+/* ── Responsive ───────────────────────────── */
+
+@media (max-width: 640px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .hero-hebrew {
+    font-size: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.3rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .parsha-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titre-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .hidoush-detail-title {
+    font-size: 1.6rem;
+  }
+
+  .hidoush-detail-meta {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
